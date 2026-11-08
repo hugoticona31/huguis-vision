@@ -1,0 +1,14 @@
+{
+  "name": "HUGUIS VISION",
+  "short_name": "HUGUIS",
+  "description": "Historias breves para crecer con Dios, la Biblia y Cristo como fundamento.",
+  "lang": "es",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ed",
+  "theme_color": "#10233f",
+  "icons": [
+    {"src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable"}
+  ]
+}
