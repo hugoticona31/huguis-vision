@@ -1,157 +1,328 @@
-<!DOCTYPE html
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#10233f">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icon.svg">
-<title>HUGUIS VISION</title>
+<meta name="theme-color" content="#071a32">
+<title>HUGUIS VISION | Miniseries Cristianas</title>
+<meta name="description" content="HUGUIS VISION: historias que inspiran, enseñan y transforman vidas.">
 <style>
-:root{--n:#10233f;--g:#d8b568;--c:#f7f4ed;--w:#fff}
+:root{
+--blue:#071a32;
+--blue2:#102c4e;
+--gold:#d8b568;
+--cream:#f7f4ed;
+--white:#fff;
+}
 *{box-sizing:border-box}
-body{margin:0;background:var(--c);color:var(--n);font-family:Arial,sans-serif}
-header{background:linear-gradient(145deg,#10233f,#21466b);color:white;text-align:center;padding:55px 20px 45px;border-bottom:7px solid var(--g)}
-.logo{width:90px;height:90px;border:4px solid var(--g);border-radius:50%;display:grid;place-items:center;margin:auto;color:var(--g);font-size:35px;font-weight:bold}
-.tag{color:var(--g);letter-spacing:3px;font-weight:bold;margin-top:25px}
-h1{font-size:36px;margin:20px 0}
-header p{font-size:19px;line-height:1.6}
-main{max-width:1050px;margin:auto;padding:25px 18px}
-h2{font-size:29px}
-.intro{color:#667085;line-height:1.7}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card{background:white;border:1px solid #e6e0d5;border-radius:22px;padding:24px;box-shadow:0 5px 20px #14243b0b}
-.card .emoji{font-size:35px}
-.card h3{font-size:21px}
-.card p{color:#667085;line-height:1.6}
-a.btn{display:inline-block;background:var(--n);color:white;text-decoration:none;padding:13px 20px;border-radius:10px;font-weight:bold;margin-top:10px}
-a.btn.gold{background:var(--g);color:var(--n)}
-.section-label{color:#ad8740;font-weight:bold;letter-spacing:3px}
-.page{display:none}
-.page:target{display:block}
-#inicio{display:block}
-#inicio:target{display:block}
-#inicio:target~.page{display:none}
-.page:target~#inicio{display:none}
-.lesson{margin:15px 0;padding:20px;background:white;border-left:5px solid var(--g);border-radius:12px}
-.lesson h3{margin-top:0}
-.video{background:#e8edf3;padding:22px;border-radius:15px;margin:18px 0}
-footer{text-align:center;background:var(--n);color:white;padding:30px;margin-top:40px}
-footer span{color:var(--g)}
-.back{margin-bottom:20px}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:#14243c}
+button,input{font:inherit}
+button{cursor:pointer}
+header{
+background:linear-gradient(135deg,#06152a,#173b61);
+color:white;text-align:center;padding:35px 18px 45px;
+border-bottom:5px solid var(--gold)
+}
+.logo{
+width:95px;height:95px;border:4px solid var(--gold);
+border-radius:50%;display:grid;place-items:center;
+margin:auto;color:var(--gold);font-size:37px;font-weight:bold
+}
+.tag{color:var(--gold);letter-spacing:4px;font-weight:bold;margin-top:28px}
+header h1{font-size:clamp(35px,8vw,60px);margin:25px 0}
+header h1 span{color:var(--gold)}
+header .intro{font-size:21px;line-height:1.6}
+.motto{font-size:14px;letter-spacing:1px;margin-top:30px;line-height:1.8}
+nav{
+background:#091c34;display:flex;justify-content:center;
+gap:10px;flex-wrap:wrap;padding:13px;position:sticky;
+top:0;z-index:10
+}
+nav a{color:white;text-decoration:none;padding:10px;font-size:14px}
+nav a:hover{color:var(--gold)}
+main{max-width:1150px;margin:auto;padding:22px 15px}
+.foundation{
+background:white;padding:30px 22px;border-radius:25px;
+text-align:center;border:1px solid #e6dfd1;margin:20px 0 40px
+}
+.foundation h2{color:#a9863c;letter-spacing:3px;font-size:18px}
+.foundation blockquote{font-size:clamp(25px,5vw,39px);font-weight:bold;margin:25px 0}
+.section-title{text-align:center;margin:40px 0 25px}
+.section-title h2{font-size:28px;color:var(--blue)}
+.section-title p{color:#657184;line-height:1.6}
+.hero{
+background:linear-gradient(120deg,#102b4a,#07172b);
+color:white;border-radius:22px;padding:30px 20px;text-align:center
+}
+.hero h2{color:var(--gold);font-size:28px}
+.gold-btn{
+background:linear-gradient(120deg,#f0d38b,#c29336);
+border:0;border-radius:25px;padding:13px 25px;
+color:#14243c;font-weight:bold
+}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.area{
+border-radius:18px;padding:22px 12px;text-align:center;
+color:white;min-height:205px;display:flex;flex-direction:column;
+justify-content:center;border:2px solid var(--gold);
+background:linear-gradient(145deg,#183c61,#091a31);
+}
+.area:nth-child(2){background:linear-gradient(145deg,#604c7e,#1a2446)}
+.area:nth-child(3){background:linear-gradient(145deg,#805b52,#302638)}
+.area:nth-child(4){background:linear-gradient(145deg,#8b6429,#332513)}
+.area:nth-child(5){background:linear-gradient(145deg,#28715c,#103d3d)}
+.area:nth-child(6){background:linear-gradient(145deg,#9b512d,#48243b)}
+.area .emoji{font-size:40px}
+.area h3{font-size:18px;margin:12px 0}
+.area p{font-size:13px;line-height:1.5;margin:0}
+.catalog{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.card{
+background:white;border-radius:17px;overflow:hidden;
+box-shadow:0 4px 15px #00000012
+}
+.cover{
+height:145px;background:linear-gradient(135deg,#183c61,#071a32);
+display:grid;place-items:center;color:var(--gold);font-size:52px
+}
+.card-content{padding:17px}
+.card h3{margin:0 0 9px;color:var(--blue)}
+.card p{font-size:14px;line-height:1.5;color:#637084}
+.card button{width:100%;margin-top:10px}
+.search{
+width:100%;padding:15px;border:1px solid #ddd;
+border-radius:25px;margin:10px 0 20px
+}
+.features{
+display:grid;grid-template-columns:repeat(3,1fr);
+gap:12px;margin:35px 0
+}
+.feature{
+background:#102a49;color:white;padding:18px 10px;
+border-radius:14px;text-align:center;font-size:14px
+}
+.feature strong{display:block;color:var(--gold);margin-bottom:8px}
+footer{
+background:#06172c;color:white;text-align:center;
+padding:35px 15px;border-top:4px solid var(--gold)
+}
+footer h2{color:var(--gold)}
+footer p{line-height:1.7}
+#modal{
+display:none;position:fixed;inset:0;background:#000c;
+z-index:30;align-items:center;justify-content:center;padding:20px
+}
+.modal-box{
+background:white;padding:25px;border-radius:20px;
+max-width:430px;width:100%;text-align:center
+}
+@media(max-width:650px){
+.grid{grid-template-columns:repeat(2,1fr)}
+.catalog{grid-template-columns:1fr}
+.features{grid-template-columns:repeat(2,1fr)}
+nav{gap:2px}
+nav a{font-size:12px;padding:9px 6px}
+}
 </style>
 </head>
 <body>
-<header>
+
+<header id="inicio">
 <div class="logo">HV</div>
 <div class="tag">VISIÓN · PROPÓSITO · FE · ACCIÓN</div>
-<h1>HUGUIS <span style="color:#d8b568">VISION</span></h1>
-<p>Historias breves. Emociones profundas.<br>Cambios que perduran.</p>
-<p style="font-size:14px">DIOS COMO FUNDAMENTO · LA BIBLIA COMO GUÍA · CRISTO COMO CAMINO</p>
+<h1>HUGUIS <span>VISION</span></h1>
+<div class="intro">
+Historias breves. Emociones profundas.<br>
+Cambios que perduran.
+</div>
+<div class="motto">
+DIOS COMO FUNDAMENTO · LA BIBLIA COMO GUÍA<br>
+CRISTO COMO CAMINO
+</div>
 </header>
 
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#areas">Áreas</a>
+<a href="#series">Miniseries</a>
+<a href="#biblioteca">Biblioteca</a>
+<a href="#nosotros">Nosotros</a>
+</nav>
+
 <main>
+<section class="foundation">
+<h2>NUESTRO FUNDAMENTO</h2>
+<blockquote>«Yo soy el camino, la verdad y la vida».</blockquote>
+<strong>Juan 14:6</strong>
+</section>
 
-<section id="inicio">
-<div class="card">
-<div class="section-label">NUESTRO FUNDAMENTO</div>
-<h2>«Yo soy el camino, la verdad y la vida».</h2>
-<p>Juan 14:6</p>
-</div>
-<br>
-<div class="section-label">DESCUBRE</div>
+<section class="hero">
+<p>BIENVENIDO A HUGUIS VISION</p>
+<h2>Historias que inspiran, enseñan y transforman vidas.</h2>
+<p>Un espacio audiovisual de formación espiritual,
+educativa, familiar y personal.</p>
+<a href="#series"><button class="gold-btn">Explorar miniseries</button></a>
+</section>
+
+<section id="areas">
+<div class="section-title">
 <h2>Seis áreas para crecer</h2>
-<p class="intro">Un espacio para aprender, fortalecer la fe, desarrollar talentos y transformar nuestra vida.</p>
+<p>Aprende, reflexiona y fortalece cada dimensión de tu vida.</p>
+</div>
 <div class="grid">
-
-<div class="card"><div class="emoji">✦</div><h3>Espiritualidad</h3><p>Oración, Biblia, fe y crecimiento espiritual.</p><a class="btn" href="#espiritualidad">Ingresar</a></div>
-
-<div class="card"><div class="emoji">📚</div><h3>Educación integral</h3><p>Mente, corazón, hábitos, aprendizaje y conocimiento.</p><a class="btn" href="#educacion">Ingresar</a></div>
-
-<div class="card"><div class="emoji">🏡</div><h3>Familia</h3><p>Amor, comunicación, valores y educación familiar.</p><a class="btn" href="#familia">Ingresar</a></div>
-
-<div class="card"><div class="emoji">💰</div><h3>Finanzas y mayordomía</h3><p>Administración, ahorro, emprendimiento y responsabilidad.</p><a class="btn" href="#finanzas">Ingresar</a></div>
-
-<div class="card"><div class="emoji">🌿</div><h3>Salud integral</h3><p>Hábitos saludables, nutrición y bienestar.</p><a class="btn" href="#salud">Ingresar</a></div>
-
-<div class="card"><div class="emoji">🚀</div><h3>Desarrollo personal</h3><p>Talentos, liderazgo, propósito y superación.</p><a class="btn" href="#desarrollo">Ingresar</a></div>
-
+<div class="area">
+<div class="emoji">📖</div>
+<h3>Espiritualidad</h3>
+<p>Biblia, oración, fe, esperanza y crecimiento.</p>
+</div>
+<div class="area">
+<div class="emoji">🎓</div>
+<h3>Educación Integral</h3>
+<p>Aprendizaje, valores, ciencia y formación.</p>
+</div>
+<div class="area">
+<div class="emoji">👨‍👩‍👧</div>
+<h3>Familia</h3>
+<p>Hogar, matrimonio, hijos y relaciones saludables.</p>
+</div>
+<div class="area">
+<div class="emoji">📈</div>
+<h3>Finanzas y Mayordomía</h3>
+<p>Administración, ahorro, inversión y responsabilidad.</p>
+</div>
+<div class="area">
+<div class="emoji">❤️</div>
+<h3>Salud Integral</h3>
+<p>Cuerpo, mente, emociones y estilo de vida.</p>
+</div>
+<div class="area">
+<div class="emoji">🚀</div>
+<h3>Desarrollo Personal</h3>
+<p>Talentos, mentalidad, hábitos y propósito de vida.</p>
+</div>
 </div>
 </section>
 
-<section id="espiritualidad" class="page">
-<a class="btn back" href="#inicio">← Inicio</a>
-<div class="section-label">ÁREA 01</div>
-<h2>✦ Espiritualidad</h2>
-<p class="intro">Aprende a conocer y confiar en Dios, amar su Palabra y practicar sus enseñanzas cada día.</p>
-<div class="card"><h3>Nuestros contenidos</h3><p>Oración · Estudio bíblico · Fe · Vida cristiana · Profecías bíblicas.</p></div>
-<div class="lesson"><h3>Lección 1: Conociendo a Dios</h3><p>Descubre el carácter, el amor y las promesas de Dios mediante la Biblia.</p><b>Lectura: Juan 17:3</b></div>
-<div class="lesson"><h3>Lección 2: El poder de la oración</h3><p>Aprende a desarrollar una relación diaria con Dios.</p><b>Lectura: Filipenses 4:6</b></div>
-<div class="video"><h3>🎬 Biblioteca audiovisual</h3><p>Busca enseñanzas y estudios bíblicos en video.</p><a class="btn" target="_blank" href="https://www.youtube.com/results?search_query=estudios+biblicos+cristianos">Ver videos</a></div>
+<section id="series">
+<div class="section-title">
+<h2>🎬 Miniseries cristianas</h2>
+<p>Historias originales con enseñanzas y aplicaciones para la vida.</p>
+</div>
+<input class="search" id="buscar" placeholder="🔍 Buscar miniseries..." oninput="filtrar()">
+<div class="catalog" id="catalogo">
+<div class="card" data-name="la promesa que cambió mi vida espiritualidad">
+<div class="cover">✝️</div>
+<div class="card-content">
+<h3>La promesa que cambió mi vida</h3>
+<p>Espiritualidad · 6 episodios</p>
+<button class="gold-btn" onclick="abrir('La promesa que cambió mi vida')">Ver detalles</button>
+</div></div>
+<div class="card" data-name="oración que transforma espiritualidad">
+<div class="cover">🙏</div>
+<div class="card-content">
+<h3>Oración que transforma</h3>
+<p>Espiritualidad · 5 episodios</p>
+<button class="gold-btn" onclick="abrir('Oración que transforma')">Ver detalles</button>
+</div></div>
+<div class="card" data-name="de la debilidad a la fortaleza desarrollo personal">
+<div class="cover">🌄</div>
+<div class="card-content">
+<h3>De la debilidad a la fortaleza</h3>
+<p>Desarrollo personal · 8 episodios</p>
+<button class="gold-btn" onclick="abrir('De la debilidad a la fortaleza')">Ver detalles</button>
+</div></div>
+<div class="card" data-name="aprender a confiar en dios familia">
+<div class="cover">🌟</div>
+<div class="card-content">
+<h3>Aprender a confiar en Dios</h3>
+<p>Fe y familia · 6 episodios</p>
+<button class="gold-btn" onclick="abrir('Aprender a confiar en Dios')">Ver detalles</button>
+</div></div>
+<div class="card" data-name="el hogar donde los sueños comienzan familia">
+<div class="cover">🏡</div>
+<div class="card-content">
+<h3>El hogar donde los sueños comienzan</h3>
+<p>Familia · 6 episodios</p>
+<button class="gold-btn" onclick="abrir('El hogar donde los sueños comienzan')">Ver detalles</button>
+</div></div>
+<div class="card" data-name="sabiduría para administrar finanzas">
+<div class="cover">💰</div>
+<div class="card-content">
+<h3>Sabiduría para administrar</h3>
+<p>Finanzas y mayordomía · 5 episodios</p>
+<button class="gold-btn" onclick="abrir('Sabiduría para administrar')">Ver detalles</button>
+</div></div>
+</div>
 </section>
 
-<section id="educacion" class="page">
-<a class="btn back" href="#inicio">← Inicio</a>
-<div class="section-label">ÁREA 02</div>
-<h2>📚 Educación integral</h2>
-<p class="intro">Desarrolla conocimientos, pensamiento crítico, creatividad y buenos hábitos.</p>
-<div class="lesson"><h3>Lección 1: El poder del aprendizaje</h3><p>Aprender a pensar, investigar, leer y descubrir nuevas ideas.</p></div>
-<div class="lesson"><h3>Lección 2: Inteligencia emocional</h3><p>Reconocer emociones, desarrollar empatía y tomar decisiones sabias.</p></div>
-<div class="video"><h3>🎬 Biblioteca educativa</h3><a class="btn" target="_blank" href="https://www.youtube.com/results?search_query=educacion+y+aprendizaje">Explorar videos</a></div>
+<section id="biblioteca">
+<div class="section-title">
+<h2>📚 Biblioteca audiovisual</h2>
+<p>Un espacio para organizar enseñanzas, documentales y videos.</p>
+</div>
+<div class="hero">
+<h2>Contenido que edifica</h2>
+<p>Próximamente: biblioteca de videos, estudios bíblicos,
+documentales y recursos educativos.</p>
+<button class="gold-btn" onclick="abrir('Biblioteca audiovisual')">Explorar biblioteca</button>
+</div>
 </section>
 
-<section id="familia" class="page">
-<a class="btn back" href="#inicio">← Inicio</a>
-<div class="section-label">ÁREA 03</div>
-<h2>🏡 Familia</h2>
-<p class="intro">Construyendo hogares fuertes mediante el amor, el respeto, la comunicación y los principios bíblicos.</p>
-<div class="lesson"><h3>Lección 1: El amor en el hogar</h3><p>Aprende a fortalecer las relaciones familiares.</p><b>Lectura: 1 Corintios 13:4-7</b></div>
-<div class="lesson"><h3>Lección 2: Educar con sabiduría</h3><p>La importancia del ejemplo, la disciplina y la paciencia.</p></div>
-<div class="video"><h3>🎬 Biblioteca familiar</h3><a class="btn" target="_blank" href="https://www.youtube.com/results?search_query=educacion+familiar+cristiana">Explorar videos</a></div>
+<section class="features">
+<div class="feature"><strong>🎬</strong>Miniseries originales</div>
+<div class="feature"><strong>📚</strong>Educación integral</div>
+<div class="feature"><strong>🌎</strong>Multidioma</div>
+<div class="feature"><strong>📱</strong>Diseño adaptable</div>
+<div class="feature"><strong>🛡️</strong>Contenido seguro</div>
+<div class="feature"><strong>✨</strong>Aprendizaje con propósito</div>
 </section>
 
-<section id="finanzas" class="page">
-<a class="btn back" href="#inicio">← Inicio</a>
-<div class="section-label">ÁREA 04</div>
-<h2>💰 Finanzas y mayordomía</h2>
-<p class="intro">Aprende a administrar los recursos con responsabilidad, sabiduría y principios cristianos.</p>
-<div class="lesson"><h3>Lección 1: El valor del ahorro</h3><p>Organiza tus recursos y aprende a establecer metas.</p><b>Lectura: Proverbios 21:5</b></div>
-<div class="lesson"><h3>Lección 2: Emprendimiento</h3><p>Transforma tus ideas y talentos en proyectos de valor.</p></div>
-<div class="video"><h3>🎬 Biblioteca financiera</h3><a class="btn" target="_blank" href="https://www.youtube.com/results?search_query=educacion+financiera+cristiana">Explorar videos</a></div>
+<section id="nosotros" class="foundation">
+<h2>NUESTRA MISIÓN</h2>
+<h3>Una visión con propósito eterno</h3>
+<p>HUGUIS VISION busca comunicar principios,
+valores y enseñanzas que contribuyan al crecimiento
+espiritual, familiar, educativo y personal.</p>
+<strong>Fundador: Hugo · Explorador de Propósito</strong>
 </section>
-
-<section id="salud" class="page">
-<a class="btn back" href="#inicio">← Inicio</a>
-<div class="section-label">ÁREA 05</div>
-<h2>🌿 Salud integral</h2>
-<p class="intro">Promueve el cuidado del cuerpo, la mente y el bienestar mediante hábitos saludables.</p>
-<div class="lesson"><h3>Lección 1: Alimentación saludable</h3><p>Conoce la importancia de una nutrición equilibrada.</p><b>Lectura: 1 Corintios 10:31</b></div>
-<div class="lesson"><h3>Lección 2: Descanso y movimiento</h3><p>Descubre el valor del descanso y la actividad física.</p></div>
-<div class="video"><h3>🎬 Biblioteca de salud</h3><a class="btn" target="_blank" href="https://www.youtube.com/results?search_query=habitos+saludables+y+nutricion">Explorar videos</a></div>
-</section>
-
-<section id="desarrollo" class="page">
-<a class="btn back" href="#inicio">← Inicio</a>
-<div class="section-label">ÁREA 06</div>
-<h2>🚀 Desarrollo personal</h2>
-<p class="intro">Descubre tus talentos, fortalece tu carácter y desarrolla tu propósito de vida.</p>
-<div class="lesson"><h3>Lección 1: Descubre tus talentos</h3><p>Identifica tus habilidades y aprende a desarrollarlas.</p><b>Lectura: Romanos 12:6</b></div>
-<div class="lesson"><h3>Lección 2: Liderazgo y propósito</h3><p>Desarrolla iniciativa, responsabilidad y espíritu de servicio.</p></div>
-<div class="video"><h3>🎬 Biblioteca de desarrollo</h3><a class="btn" target="_blank" href="https://www.youtube.com/results?search_query=desarrollo+personal+y+liderazgo">Explorar videos</a></div>
-</section>
-
 </main>
+
+<div id="modal">
+<div class="modal-box">
+<h2 id="modal-title">HUGUIS VISION</h2>
+<p id="modal-text">Contenido en preparación.</p>
+<button class="gold-btn" onclick="cerrar()">Cerrar</button>
+</div>
+</div>
+
 <footer>
-<h2>HUGUIS <span>VISION</span></h2>
+<h2>HUGUIS VISION</h2>
 <p>Visión · Propósito · Fe · Acción</p>
 <p>Dios como fundamento. Cristo como camino.</p>
+<p>«Yo soy el camino, la verdad y la vida».<br>Juan 14:6</p>
+<p>© 2026 HUGUIS VISION · Todos los derechos reservados.</p>
 </footer>
+
 <script>
-if("serviceWorker" in navigator){
-window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+function abrir(nombre){
+document.getElementById('modal-title').textContent=nombre;
+document.getElementById('modal-text').textContent=
+'Esta sección forma parte del catálogo de HUGUIS VISION. Los videos y episodios se incorporarán cuando estén publicados.';
+document.getElementById('modal').style.display='flex';
 }
+function cerrar(){
+document.getElementById('modal').style.display='none';
+}
+function filtrar(){
+let q=document.getElementById('buscar').value.toLowerCase();
+document.querySelectorAll('#catalogo .card').forEach(card=>{
+card.style.display=card.dataset.name.includes(q)?'block':'none';
+});
+}
+document.getElementById('modal').addEventListener('click',function(e){
+if(e.target===this)cerrar();
+});
 </script>
 </body>
 </html>
-Actualizar HUGUIS VISION audiovisual 80-20.
-Yo soy el camino, la verdad y la vida
