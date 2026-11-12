@@ -1,6 +1,12 @@
-HUGUIS VISION - paquete inicial PWA
-1. Sube TODOS los archivos de esta carpeta a la raíz de un sitio web HTTPS.
-2. La página principal es index.html.
-3. manifest.webmanifest y sw.js habilitan la configuración PWA básica.
-4. La instalación requiere publicar primero el sitio en HTTPS.
-5. Este paquete es un prototipo visual: aún no contiene videos reales, cuentas, base de datos ni panel administrativo.
+HUGUIS VISION — paquete web inicial
+
+1) Reemplaza el contenido del index.html actual en GitHub por el archivo index.html de este paquete y pulsa Commit changes.
+2) En la raíz del repositorio crea manifest.webmanifest y pega su archivo.
+3) Crea sw.js y pega su archivo. Guarda ambos con Commit changes.
+4) Abre el sitio publicado y actualiza.
+
+Para añadir vídeos: en index.html busca `const shows=`. Cada miniserie termina con una cadena vacía para el vídeo. Sustitúyela por una URL MP4 propia o URL de YouTube. Usa solo material con derechos o autorización.
+
+Este paquete incluye web adaptable, seis áreas, catálogo de demostración, búsqueda, filtros, reproductor preparado para URL de vídeo, compartir mediante el menú del dispositivo y base PWA. La selección de idioma solo traduce parcialmente la interfaz a inglés o portugués; las otras opciones son preparatorias. No traduce automáticamente los vídeos.
+
+No publica automáticamente en todas las redes ni entrega películas a canales de TV o salas de cine. Para ello hacen falta cuentas y permisos de publicación, traducciones/subtítulos revisados, archivos finales, licencias y acuerdos con plataformas, emisoras o distribuidores. El contenido sin conexión también requiere empaquetar los vídeos y sus derechos de uso.

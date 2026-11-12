@@ -1,328 +1,38 @@
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#071a32">
-<title>HUGUIS VISION | Miniseries Cristianas</title>
-<meta name="description" content="HUGUIS VISION: historias que inspiran, enseñan y transforman vidas.">
+<meta name="description" content="HUGUIS VISION: miniseries cristianas e historias con propósito.">
+<meta property="og:title" content="HUGUIS VISION | Miniseries cristianas">
+<meta property="og:description" content="Historias breves. Emociones profundas. Cambios que perduran.">
+<link rel="manifest" href="manifest.webmanifest"><title>HUGUIS VISION | Miniseries cristianas</title>
 <style>
-:root{
---blue:#071a32;
---blue2:#102c4e;
---gold:#d8b568;
---cream:#f7f4ed;
---white:#fff;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,sans-serif;background:var(--cream);color:#14243c}
-button,input{font:inherit}
-button{cursor:pointer}
-header{
-background:linear-gradient(135deg,#06152a,#173b61);
-color:white;text-align:center;padding:35px 18px 45px;
-border-bottom:5px solid var(--gold)
-}
-.logo{
-width:95px;height:95px;border:4px solid var(--gold);
-border-radius:50%;display:grid;place-items:center;
-margin:auto;color:var(--gold);font-size:37px;font-weight:bold
-}
-.tag{color:var(--gold);letter-spacing:4px;font-weight:bold;margin-top:28px}
-header h1{font-size:clamp(35px,8vw,60px);margin:25px 0}
-header h1 span{color:var(--gold)}
-header .intro{font-size:21px;line-height:1.6}
-.motto{font-size:14px;letter-spacing:1px;margin-top:30px;line-height:1.8}
-nav{
-background:#091c34;display:flex;justify-content:center;
-gap:10px;flex-wrap:wrap;padding:13px;position:sticky;
-top:0;z-index:10
-}
-nav a{color:white;text-decoration:none;padding:10px;font-size:14px}
-nav a:hover{color:var(--gold)}
-main{max-width:1150px;margin:auto;padding:22px 15px}
-.foundation{
-background:white;padding:30px 22px;border-radius:25px;
-text-align:center;border:1px solid #e6dfd1;margin:20px 0 40px
-}
-.foundation h2{color:#a9863c;letter-spacing:3px;font-size:18px}
-.foundation blockquote{font-size:clamp(25px,5vw,39px);font-weight:bold;margin:25px 0}
-.section-title{text-align:center;margin:40px 0 25px}
-.section-title h2{font-size:28px;color:var(--blue)}
-.section-title p{color:#657184;line-height:1.6}
-.hero{
-background:linear-gradient(120deg,#102b4a,#07172b);
-color:white;border-radius:22px;padding:30px 20px;text-align:center
-}
-.hero h2{color:var(--gold);font-size:28px}
-.gold-btn{
-background:linear-gradient(120deg,#f0d38b,#c29336);
-border:0;border-radius:25px;padding:13px 25px;
-color:#14243c;font-weight:bold
-}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.area{
-border-radius:18px;padding:22px 12px;text-align:center;
-color:white;min-height:205px;display:flex;flex-direction:column;
-justify-content:center;border:2px solid var(--gold);
-background:linear-gradient(145deg,#183c61,#091a31);
-}
-.area:nth-child(2){background:linear-gradient(145deg,#604c7e,#1a2446)}
-.area:nth-child(3){background:linear-gradient(145deg,#805b52,#302638)}
-.area:nth-child(4){background:linear-gradient(145deg,#8b6429,#332513)}
-.area:nth-child(5){background:linear-gradient(145deg,#28715c,#103d3d)}
-.area:nth-child(6){background:linear-gradient(145deg,#9b512d,#48243b)}
-.area .emoji{font-size:40px}
-.area h3{font-size:18px;margin:12px 0}
-.area p{font-size:13px;line-height:1.5;margin:0}
-.catalog{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
-.card{
-background:white;border-radius:17px;overflow:hidden;
-box-shadow:0 4px 15px #00000012
-}
-.cover{
-height:145px;background:linear-gradient(135deg,#183c61,#071a32);
-display:grid;place-items:center;color:var(--gold);font-size:52px
-}
-.card-content{padding:17px}
-.card h3{margin:0 0 9px;color:var(--blue)}
-.card p{font-size:14px;line-height:1.5;color:#637084}
-.card button{width:100%;margin-top:10px}
-.search{
-width:100%;padding:15px;border:1px solid #ddd;
-border-radius:25px;margin:10px 0 20px
-}
-.features{
-display:grid;grid-template-columns:repeat(3,1fr);
-gap:12px;margin:35px 0
-}
-.feature{
-background:#102a49;color:white;padding:18px 10px;
-border-radius:14px;text-align:center;font-size:14px
-}
-.feature strong{display:block;color:var(--gold);margin-bottom:8px}
-footer{
-background:#06172c;color:white;text-align:center;
-padding:35px 15px;border-top:4px solid var(--gold)
-}
-footer h2{color:var(--gold)}
-footer p{line-height:1.7}
-#modal{
-display:none;position:fixed;inset:0;background:#000c;
-z-index:30;align-items:center;justify-content:center;padding:20px
-}
-.modal-box{
-background:white;padding:25px;border-radius:20px;
-max-width:430px;width:100%;text-align:center
-}
-@media(max-width:650px){
-.grid{grid-template-columns:repeat(2,1fr)}
-.catalog{grid-template-columns:1fr}
-.features{grid-template-columns:repeat(2,1fr)}
-nav{gap:2px}
-nav a{font-size:12px;padding:9px 6px}
-}
-</style>
-</head>
-<body>
-
-<header id="inicio">
-<div class="logo">HV</div>
-<div class="tag">VISIÓN · PROPÓSITO · FE · ACCIÓN</div>
-<h1>HUGUIS <span>VISION</span></h1>
-<div class="intro">
-Historias breves. Emociones profundas.<br>
-Cambios que perduran.
-</div>
-<div class="motto">
-DIOS COMO FUNDAMENTO · LA BIBLIA COMO GUÍA<br>
-CRISTO COMO CAMINO
-</div>
-</header>
-
-<nav>
-<a href="#inicio">Inicio</a>
-<a href="#areas">Áreas</a>
-<a href="#series">Miniseries</a>
-<a href="#biblioteca">Biblioteca</a>
-<a href="#nosotros">Nosotros</a>
-</nav>
-
-<main>
-<section class="foundation">
-<h2>NUESTRO FUNDAMENTO</h2>
-<blockquote>«Yo soy el camino, la verdad y la vida».</blockquote>
-<strong>Juan 14:6</strong>
-</section>
-
-<section class="hero">
-<p>BIENVENIDO A HUGUIS VISION</p>
-<h2>Historias que inspiran, enseñan y transforman vidas.</h2>
-<p>Un espacio audiovisual de formación espiritual,
-educativa, familiar y personal.</p>
-<a href="#series"><button class="gold-btn">Explorar miniseries</button></a>
-</section>
-
-<section id="areas">
-<div class="section-title">
-<h2>Seis áreas para crecer</h2>
-<p>Aprende, reflexiona y fortalece cada dimensión de tu vida.</p>
-</div>
-<div class="grid">
-<div class="area">
-<div class="emoji">📖</div>
-<h3>Espiritualidad</h3>
-<p>Biblia, oración, fe, esperanza y crecimiento.</p>
-</div>
-<div class="area">
-<div class="emoji">🎓</div>
-<h3>Educación Integral</h3>
-<p>Aprendizaje, valores, ciencia y formación.</p>
-</div>
-<div class="area">
-<div class="emoji">👨‍👩‍👧</div>
-<h3>Familia</h3>
-<p>Hogar, matrimonio, hijos y relaciones saludables.</p>
-</div>
-<div class="area">
-<div class="emoji">📈</div>
-<h3>Finanzas y Mayordomía</h3>
-<p>Administración, ahorro, inversión y responsabilidad.</p>
-</div>
-<div class="area">
-<div class="emoji">❤️</div>
-<h3>Salud Integral</h3>
-<p>Cuerpo, mente, emociones y estilo de vida.</p>
-</div>
-<div class="area">
-<div class="emoji">🚀</div>
-<h3>Desarrollo Personal</h3>
-<p>Talentos, mentalidad, hábitos y propósito de vida.</p>
-</div>
-</div>
-</section>
-
-<section id="series">
-<div class="section-title">
-<h2>🎬 Miniseries cristianas</h2>
-<p>Historias originales con enseñanzas y aplicaciones para la vida.</p>
-</div>
-<input class="search" id="buscar" placeholder="🔍 Buscar miniseries..." oninput="filtrar()">
-<div class="catalog" id="catalogo">
-<div class="card" data-name="la promesa que cambió mi vida espiritualidad">
-<div class="cover">✝️</div>
-<div class="card-content">
-<h3>La promesa que cambió mi vida</h3>
-<p>Espiritualidad · 6 episodios</p>
-<button class="gold-btn" onclick="abrir('La promesa que cambió mi vida')">Ver detalles</button>
-</div></div>
-<div class="card" data-name="oración que transforma espiritualidad">
-<div class="cover">🙏</div>
-<div class="card-content">
-<h3>Oración que transforma</h3>
-<p>Espiritualidad · 5 episodios</p>
-<button class="gold-btn" onclick="abrir('Oración que transforma')">Ver detalles</button>
-</div></div>
-<div class="card" data-name="de la debilidad a la fortaleza desarrollo personal">
-<div class="cover">🌄</div>
-<div class="card-content">
-<h3>De la debilidad a la fortaleza</h3>
-<p>Desarrollo personal · 8 episodios</p>
-<button class="gold-btn" onclick="abrir('De la debilidad a la fortaleza')">Ver detalles</button>
-</div></div>
-<div class="card" data-name="aprender a confiar en dios familia">
-<div class="cover">🌟</div>
-<div class="card-content">
-<h3>Aprender a confiar en Dios</h3>
-<p>Fe y familia · 6 episodios</p>
-<button class="gold-btn" onclick="abrir('Aprender a confiar en Dios')">Ver detalles</button>
-</div></div>
-<div class="card" data-name="el hogar donde los sueños comienzan familia">
-<div class="cover">🏡</div>
-<div class="card-content">
-<h3>El hogar donde los sueños comienzan</h3>
-<p>Familia · 6 episodios</p>
-<button class="gold-btn" onclick="abrir('El hogar donde los sueños comienzan')">Ver detalles</button>
-</div></div>
-<div class="card" data-name="sabiduría para administrar finanzas">
-<div class="cover">💰</div>
-<div class="card-content">
-<h3>Sabiduría para administrar</h3>
-<p>Finanzas y mayordomía · 5 episodios</p>
-<button class="gold-btn" onclick="abrir('Sabiduría para administrar')">Ver detalles</button>
-</div></div>
-</div>
-</section>
-
-<section id="biblioteca">
-<div class="section-title">
-<h2>📚 Biblioteca audiovisual</h2>
-<p>Un espacio para organizar enseñanzas, documentales y videos.</p>
-</div>
-<div class="hero">
-<h2>Contenido que edifica</h2>
-<p>Próximamente: biblioteca de videos, estudios bíblicos,
-documentales y recursos educativos.</p>
-<button class="gold-btn" onclick="abrir('Biblioteca audiovisual')">Explorar biblioteca</button>
-</div>
-</section>
-
-<section class="features">
-<div class="feature"><strong>🎬</strong>Miniseries originales</div>
-<div class="feature"><strong>📚</strong>Educación integral</div>
-<div class="feature"><strong>🌎</strong>Multidioma</div>
-<div class="feature"><strong>📱</strong>Diseño adaptable</div>
-<div class="feature"><strong>🛡️</strong>Contenido seguro</div>
-<div class="feature"><strong>✨</strong>Aprendizaje con propósito</div>
-</section>
-
-<section id="nosotros" class="foundation">
-<h2>NUESTRA MISIÓN</h2>
-<h3>Una visión con propósito eterno</h3>
-<p>HUGUIS VISION busca comunicar principios,
-valores y enseñanzas que contribuyan al crecimiento
-espiritual, familiar, educativo y personal.</p>
-<strong>Fundador: Hugo · Explorador de Propósito</strong>
-</section>
-</main>
-
-<div id="modal">
-<div class="modal-box">
-<h2 id="modal-title">HUGUIS VISION</h2>
-<p id="modal-text">Contenido en preparación.</p>
-<button class="gold-btn" onclick="cerrar()">Cerrar</button>
-</div>
-</div>
-
-<footer>
-<h2>HUGUIS VISION</h2>
-<p>Visión · Propósito · Fe · Acción</p>
-<p>Dios como fundamento. Cristo como camino.</p>
-<p>«Yo soy el camino, la verdad y la vida».<br>Juan 14:6</p>
-<p>© 2026 HUGUIS VISION · Todos los derechos reservados.</p>
-</footer>
-
+:root{--n:#071a32;--b:#102c4e;--g:#d8b568;--c:#f7f4ed;--ink:#14243d}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--c);color:var(--ink);font-family:Arial,sans-serif}button,input,select{font:inherit}.top{position:sticky;top:0;z-index:5;background:#071a32ed;color:white;padding:12px 4%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--g)}.brand{font-weight:900;letter-spacing:1px}.mark{display:inline-grid;place-items:center;border:2px solid var(--g);border-radius:50%;width:40px;height:40px;color:var(--g);margin-right:8px}.top a{color:white;text-decoration:none;margin:0 8px}.top select{background:var(--b);color:white;padding:9px;border:1px solid var(--g);border-radius:8px}.hero{background:linear-gradient(90deg,#06172bf2,#0a2340d9),url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=85') center/cover;color:white;padding:75px 7%;display:grid;grid-template-columns:1fr 260px;gap:30px;align-items:center;min-height:510px}.gold{color:var(--g);letter-spacing:4px;font-weight:bold}.hero h1{font-size:clamp(44px,7vw,80px);margin:18px 0}.hero p{font-size:22px;line-height:1.5}.portrait{border:2px solid var(--g);border-radius:22px;padding:15px;text-align:center;background:#071a3288}.portrait div{height:210px;display:grid;place-items:center;background:linear-gradient(135deg,#24466c,#071a32);border-radius:12px;color:var(--g);font-size:65px}.btn{display:inline-block;border:1px solid var(--g);border-radius:30px;padding:12px 20px;background:linear-gradient(135deg,#f4d27c,#b98225);color:#17243a;font-weight:bold;text-decoration:none;cursor:pointer;margin:6px 5px 0 0}.btn.alt{background:transparent;color:white}.section{padding:48px 5%}.foundation,.card{background:white;border-radius:18px;padding:25px;box-shadow:0 8px 25px #071a3212}.foundation{border-left:7px solid var(--g);max-width:1050px;margin:0 auto 38px}.foundation blockquote{font:clamp(25px,4vw,38px) Georgia,serif;margin:15px 0}.areas,.series,.features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.area{background:linear-gradient(145deg,var(--b),var(--n));color:white;border:1px solid var(--g);border-radius:18px;padding:22px;text-align:left;cursor:pointer;min-height:165px}.area b{display:block;font-size:21px;margin:12px 0}.area p{color:#e0e7f0}.dark{background:var(--n);color:white}.dark p{color:#d3dceb}.tools{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}.tools input,.tools select{padding:12px;border-radius:9px;border:1px solid #ccc}.item{background:white;color:var(--ink);border-radius:16px;overflow:hidden}.poster{height:130px;background:linear-gradient(135deg,#23496f,#071a32);display:grid;place-items:center;font-size:48px;color:var(--g)}.itembody{padding:17px}.pill{background:#f4e7c7;color:#76551b;padding:5px 9px;border-radius:20px;font-size:12px}.item p{color:#657084;min-height:45px}.features .card{line-height:1.5}.footer{background:#041020;color:white;text-align:center;padding:35px 15px;border-top:3px solid var(--g)}.footer a,.footer button{color:white;background:var(--b);border:1px solid var(--g);border-radius:22px;padding:10px 14px;text-decoration:none;margin:5px}.modal{display:none;position:fixed;inset:0;background:#000d;z-index:10;place-items:center;padding:15px}.modal.open{display:grid}.player{background:var(--n);color:white;border:1px solid var(--g);border-radius:15px;padding:20px;width:min(850px,100%)}.player video,.player iframe{width:100%;aspect-ratio:16/9;background:black;border:0}.close{float:right;background:none;color:white;border:1px solid var(--g);border-radius:50%;padding:8px 13px}.note{font-size:13px;color:#aebbd0}@media(max-width:750px){.hero{grid-template-columns:1fr;padding:55px 6%}.portrait{display:none}.areas,.series,.features{grid-template-columns:repeat(2,1fr)}.top nav a{display:none}}@media(max-width:500px){.areas,.series,.features{grid-template-columns:1fr}.hero h1{font-size:46px}}
+</style></head><body>
+<header class="top"><div class="brand"><span class="mark">H▶</span>HUGUIS <span style="color:var(--g)">VISION</span></div><nav><a href="#areas">Áreas</a><a href="#catalogo">Miniseries</a><a href="#proyecto">Proyecto</a></nav><select id="lang" aria-label="Idioma"><option value="es">Español</option><option value="en">English</option><option value="pt">Português</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="zh">中文</option><option value="ar">العربية</option></select></header>
+<main><section class="hero"><div><div class="gold">VISIÓN · PROPÓSITO · FE · ACCIÓN</div><h1>HUGUIS <span style="color:var(--g)">VISION</span></h1><p id="tagline">Historias breves. Emociones profundas. Cambios que perduran.</p><p style="font:italic 22px Georgia">«Yo soy el camino, la verdad y la vida». <b>Juan 14:6</b></p><a class="btn" href="#catalogo">Comenzar</a><a class="btn alt" href="#areas">Descubrir las seis áreas</a></div><div class="portrait"><div>HV</div><p><b>Hugo</b><br>Explorador de Propósito<br><span style="color:var(--g)">Fundador de HUGUIS VISION</span></p></div></section>
+<section class="section"><div class="foundation"><div class="gold">NUESTRO FUNDAMENTO</div><blockquote>«Yo soy el camino, la verdad y la vida».</blockquote><b>Juan 14:6</b><p>Dios como fundamento · La Biblia como guía · Cristo como camino.</p></div><div id="areas"><div class="gold">DESCUBRE</div><h2>Seis áreas para crecer</h2><div class="areas" id="areasGrid"></div></div></section>
+<section class="section dark" id="catalogo"><div class="gold">PRODUCCIONES CON PROPÓSITO</div><h2>Explora nuestras miniseries</h2><p>Busca por título o filtra por área. Añade los enlaces de tus vídeos para habilitar su reproducción.</p><div class="tools"><input id="search" placeholder="Buscar miniseries..." aria-label="Buscar"><select id="filter"><option value="all">Todas las áreas</option></select></div><div class="series" id="seriesGrid"></div></section>
+<section class="section" id="proyecto"><div class="gold">HUGUIS VISION</div><h2>Una historia puede abrir un camino</h2><p>Creamos un espacio audiovisual y educativo para inspirar, enseñar y fortalecer vidas mediante historias con valores y propósito.</p><div class="features"><div class="card">🎬<b>Miniseries originales</b><br>Historias breves con mensajes que dejan huella.</div><div class="card">🌍<b>Proyección internacional</b><br>Preparado para traducciones y subtítulos en múltiples idiomas.</div><div class="card">📱<b>Multiplataforma</b><br>Diseño adaptable a celulares, tabletas, computadoras y pantallas de TV.</div><div class="card">📺<b>Televisión y cine</b><br>La distribución requiere presentar cada producción a canales, plataformas o distribuidores y cumplir sus requisitos técnicos y legales.</div><div class="card">🔗<b>Redes sociales</b><br>Comparte el sitio o cada producción mediante las opciones de tu dispositivo.</div><div class="card">⬇️<b>Aplicación web</b><br>Base PWA instalable; el contenido audiovisual sin conexión requiere preparación adicional.</div></div></section></main>
+<footer class="footer"><div class="brand">HUGUIS VISION</div><p>Más que entretenimiento, una herramienta para tu vida.</p><button id="share">Compartir HUGUIS VISION</button><p><a href="https://youtube.com/" target="_blank" rel="noopener">YouTube</a><a href="https://facebook.com/" target="_blank" rel="noopener">Facebook</a><a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a><a href="https://tiktok.com/" target="_blank" rel="noopener">TikTok</a></p><small>© <span id="year"></span> HUGUIS VISION</small></footer>
+<div class="modal" id="modal"><div class="player"><button class="close" id="close">×</button><h2 id="mtitle"></h2><p id="mdesc"></p><div id="video"></div><p class="note">Publica únicamente vídeos propios o con permisos y licencias correspondientes.</p></div></div>
 <script>
-function abrir(nombre){
-document.getElementById('modal-title').textContent=nombre;
-document.getElementById('modal-text').textContent=
-'Esta sección forma parte del catálogo de HUGUIS VISION. Los videos y episodios se incorporarán cuando estén publicados.';
-document.getElementById('modal').style.display='flex';
-}
-function cerrar(){
-document.getElementById('modal').style.display='none';
-}
-function filtrar(){
-let q=document.getElementById('buscar').value.toLowerCase();
-document.querySelectorAll('#catalogo .card').forEach(card=>{
-card.style.display=card.dataset.name.includes(q)?'block':'none';
-});
-}
-document.getElementById('modal').addEventListener('click',function(e){
-if(e.target===this)cerrar();
-});
-</script>
-</body>
-</html>
+const areaData=[["spiritual","📖","Espiritualidad","Biblia, oración, fe y esperanza."],["education","🎓","Educación integral","Aprendizaje, valores, ciencia y formación."],["family","👨‍👩‍👧","Familia","Hogar, matrimonio, hijos y relaciones saludables."],["finance","📈","Finanzas y Mayordomía","Administración, ahorro, inversión y responsabilidad."],["health","🌿","Salud integral","Cuerpo, mente, emociones y estilo de vida."],["personal","🎯","Desarrollo personal","Mentalidad, hábitos, metas y propósito de vida."]];
+const shows=[
+["spiritual","La promesa que cambió mi vida",6,"Una historia sobre fe, esperanza y confianza en Dios.",""],
+["spiritual","Oración que transforma",5,"El poder de buscar a Dios con sinceridad.",""],
+["spiritual","De la debilidad a la fortaleza",8,"Un recorrido de restauración, valor y perseverancia.",""],
+["education","Aprender para servir",6,"Conocimiento, carácter y servicio puestos en acción.",""],
+["family","El hogar donde los sueños comienzan",6,"Una familia aprende a escucharse, crecer y caminar unida.",""],
+["finance","Mayordomos con propósito",5,"Principios prácticos para administrar con sabiduría.",""],
+["health","Hábitos para una vida plena",6,"Decisiones para cuidar cuerpo, mente y emociones.",""],
+["personal","La decisión que cambió su destino",6,"Una historia de propósito, disciplina y nuevas oportunidades.",""]];
+const areaNames=Object.fromEntries(areaData.map(a=>[a[0],a[2]]));
+const ag=document.getElementById("areasGrid"),fg=document.getElementById("filter");
+areaData.forEach(a=>{ag.innerHTML+=`<button class="area" data-area="${a[0]}"><span style="font-size:32px">${a[1]}</span><b>${a[2]}</b><p>${a[3]}</p></button>`;fg.innerHTML+=`<option value="${a[0]}">${a[2]}</option>`});
+function render(){let q=document.getElementById("search").value.toLowerCase(),f=fg.value;let list=shows.map((s,i)=>({...s,i})).filter(s=>(f==="all"||s[0]===f)&&(s[1].toLowerCase().includes(q)||s[3].toLowerCase().includes(q)));document.getElementById("seriesGrid").innerHTML=list.map(s=>`<article class="item"><div class="poster">${areaData.find(a=>a[0]===s[0])[1]}</div><div class="itembody"><span class="pill">${areaNames[s[0]]}</span><h3>${s[1]}</h3><p>${s[3]}</p><small>${s[2]} episodios</small><br><button class="btn" onclick="openShow(${s.i})">Ver detalles</button></div></article>`).join("")||"<p>No hay resultados.</p>"}
+function openShow(i){let s=shows[i];document.getElementById("mtitle").textContent=s[1];document.getElementById("mdesc").textContent=s[3]+" · "+s[2]+" episodios.";let v=document.getElementById("video");v.innerHTML=s[4]?(s[4].includes("youtu")?`<iframe src="https://www.youtube-nocookie.com/embed/${(s[4].match(/(?:v=|youtu.be\/)([^&?/]+)/)||[])[1]||""}" allowfullscreen></iframe>`:`<video controls playsinline src="${s[4]}"></video>`):'<div style="aspect-ratio:16/9;background:#000;display:grid;place-items:center;text-align:center;padding:20px">🎬<br>Este episodio está en preparación.<br><small class="note">Añade una URL MP4 o YouTube al campo de vídeo de la miniserie en index.html.</small></div>';document.getElementById("modal").classList.add("open")}
+document.getElementById("close").onclick=()=>document.getElementById("modal").classList.remove("open");document.getElementById("modal").onclick=e=>{if(e.target.id==="modal")e.currentTarget.classList.remove("open")};document.getElementById("search").oninput=render;fg.onchange=render;document.querySelectorAll(".area").forEach(b=>b.onclick=()=>{fg.value=b.dataset.area;document.getElementById("catalogo").scrollIntoView();render()});document.getElementById("share").onclick=async()=>{let d={title:"HUGUIS VISION",text:"Historias breves. Emociones profundas.",url:location.href};if(navigator.share){try{await navigator.share(d)}catch(e){}}else{try{await navigator.clipboard.writeText(location.href);alert("Enlace copiado.")}catch(e){prompt("Copia el enlace",location.href)}}};document.getElementById("year").textContent=new Date().getFullYear();render();
+const langs={en:["Short stories. Deep emotions. Lasting change.","Discover six areas","Explore our mini-series"],pt:["Histórias breves. Emoções profundas. Mudanças duradouras.","Descubra seis áreas","Explore nossas minisséries"]};document.getElementById("lang").onchange=e=>{let l=e.target.value;if(langs[l]){document.getElementById("tagline").textContent=langs[l][0];document.querySelector("#areas h2").textContent=langs[l][1];document.querySelector("#catalogo h2").textContent=langs[l][2]}else{document.getElementById("tagline").textContent="Historias breves. Emociones profundas. Cambios que perduran.";document.querySelector("#areas h2").textContent="Seis áreas para crecer";document.querySelector("#catalogo h2").textContent="Explora nuestras miniseries"}document.documentElement.lang=l};
+if("serviceWorker"in navigator&&location.protocol.startsWith("http"))addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
+</script></body></html>
